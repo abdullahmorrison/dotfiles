@@ -8,4 +8,5 @@ alias gpush="git push"
 alias gpull="git pull"
 
 # terminal
+alias :q="exit"
 alias c="clear"
