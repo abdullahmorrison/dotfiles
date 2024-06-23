@@ -41,6 +41,8 @@ then navigate to the tmux.conf file and run `<prefix>-I` to install tmux themes 
 ```
 cd  ~/.config/tmux/tmux.conf
 ```
+### Nvim
+go to https://github.com/abdullahmorrison/nvim to view setup
 
 ## Trouble Shoot
 run the following command if you already have some file in your $HOME dir that is in your .dotfiles. 
