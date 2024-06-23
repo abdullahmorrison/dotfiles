@@ -29,6 +29,18 @@ To set up your .zshrc config & aliases run the following cmd
 ```
 source $HOME/.zshrc
 ```
+### Tmux
+```
+sudo apt install apt install tmux
+```
+open tmux and run the following to set up keybinding and settings
+```
+tmux source ~/.config/tmux/tmux.conf
+```
+then navigate to the tmux.conf file and run `<prefix>-I` to install tmux themes and dependencies
+```
+cd  ~/.config/tmux/tmux.conf
+```
 
 ## Trouble Shoot
 run the following command if you already have some file in your $HOME dir that is in your .dotfiles. 
