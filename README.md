@@ -44,6 +44,12 @@ cd  ~/.config/tmux/tmux.conf
 ### Nvim
 go to https://github.com/abdullahmorrison/nvim to view setup
 
+Install submodules with the following commands
+```
+git submodule init
+git submodule update
+```
+
 ## Trouble Shoot
 run the following command if you already have some file in your $HOME dir that is in your .dotfiles. 
 ```
