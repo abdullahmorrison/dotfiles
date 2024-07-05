@@ -1,0 +1,37 @@
+---
+- name: Machine setup
+  hosts: localhost
+  become: true
+  connection: local
+  gather_facts: true
+
+  tasks:
+    - name: Get my user
+      ansible.builtin.set_fact:
+        remote_regular_user: "{{ ansible_env.SUDO_USER or ansible_user_id }}"
+
+    - name: Download the latest Neovim tarball
+      get_url:
+        url: https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+        dest: /tmp/nvim-linux64.tar.gz
+
+    - name: Extract the Neovim tarball
+      ansible.builtin.unarchive:
+        src: /tmp/nvim-linux64.tar.gz
+        dest: /opt/
+        remote_src: yes
+
+    - name: Install other packages
+      ansible.builtin.apt:
+        name:
+          - nodejs
+          - gcc
+          - ripgrep
+          - zsh
+          - fzf
+          - tmux
+          - stow
+          - gh
+        state: latest
+        update_cache: yes
+
