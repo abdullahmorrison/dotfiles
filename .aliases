@@ -1,12 +1,13 @@
 #!/bin/zsh
 
 #Git
-alias gs="git status"
-alias ga="git add -p"
-alias gc="git commit -m"
-alias gpush="git push"
-alias gpull="git pull"
+alias gs='git status'
+alias ga='git add -p'
+alias gc='git commit -m'
+alias gpush='git push'
+alias gpull='git pull'
 
 # terminal
 alias :q="exit"
 alias c="clear"
+alias projects='nvim $(find $HOME/code -maxdepth 1 -type d | fzf)'
