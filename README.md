@@ -11,28 +11,36 @@ Ensure you have the following installed on your system
 sudo apt install git
 ```
 
-### GNU Stow
+### Ansible
 ```
-sudo apt install stow
+sudo apt-get update
+sudo apt-get install -y ansible
+
 ```
 ## Installation
-First, checkout the dotfiles repo in your $HOME/code directory using git
+Naviagte to your root directory and clone the repo
 ```
-git clone https://github.com/abdullahmorrison/.dotfiles.git
-cd .dotfiles
+cd $HOME
+git clone https://github.com/abdullahmorrison/dotfiles.git
+cd dotfiles
 ```
+
+Run Ansible playbook to install all required libraries
+```
+ansible-playbook .bootstrap/setup.yml --ask-become-pass
+```
+
 then use GNU stow to create the symlinks
 ```
 stow .
 ```
+
 To set up your .zshrc config & aliases run the following cmd
 ```
 source $HOME/.zshrc
 ```
+
 ### Tmux
-```
-sudo apt install apt install tmux
-```
 open tmux and run the following to set up keybinding and settings
 ```
 tmux source ~/.config/tmux/tmux.conf
