@@ -31,7 +31,7 @@ source $HOME/.zshrc
 ```
 ### Tmux
 ```
-sudo apt install apt install tmux
+sudo apt install tmux
 ```
 open tmux and run the following to set up keybinding and settings
 ```
