@@ -24,7 +24,6 @@
     - name: Install other packages
       ansible.builtin.apt:
         name:
-          - git
           - nodejs
           - gcc
           - ripgrep
