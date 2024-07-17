@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 #git
-alias gs='git status'
+alias gs='git status -s'
 alias ga='git add -p'
 alias gc='git commit -m'
 alias gpush='git push'
