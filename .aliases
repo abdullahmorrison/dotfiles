@@ -35,3 +35,26 @@ alias mv='mv -i' #move file
 alias cp='cp -i' #copy file
 alias rm='rm -i' #delete file
 alias ln='ln -i' #symlink file
+
+#get tmux cheatsheet
+alias tmuxch='check_and_clone_repo https://github.com/abdullahmorrison/tmux-cheatsheet'
+
+# Function to check if a tmux-cheatsheet repo exists, clone if not, and cat tmux-cheatsheet.md
+check_and_clone_repo() {
+    local code_dir="$HOME/code"
+    local repo_url="$1"
+    local repo_name="$(basename -s .git "$repo_url")"
+    local repo_path="$code_dir/$repo_name"
+    local readme_file="$repo_path/tmux-cheatsheet.md"
+
+    if [ ! -d "$repo_path" ]; then
+        echo "Repository not found in $code_dir. Cloning..."
+        git clone "$repo_url" "$repo_path"
+    fi
+
+    if [ -f "$readme_file" ]; then
+        cat "$readme_file"
+    else
+        echo "tmux-cheatsheet.md not found in the repository."
+    fi
+}
