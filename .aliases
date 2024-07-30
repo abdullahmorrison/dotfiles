@@ -15,7 +15,7 @@ alias projects='nvim $(find $HOME/code -maxdepth 1 -type d | fzf)' #open project
 alias ls='exa -al --color=always --group-directories-first'
 alias grep='grep --color=auto'
 alias dot='cd $HOME/code/dotfiles/' #open dotfiles folder
-alias nvimconfig='cd $HOME/code/dotfiles/.config/nvim/' #open nvim config folder
+alias nvimconfig='nvim $HOME/code/dotfiles/.config/nvim/' #open nvim config folder
 
 #apt package manager
 alias aptup='sudo apt update && sudo apt upgrade'
