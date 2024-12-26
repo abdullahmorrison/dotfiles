@@ -11,6 +11,11 @@ alias gwta='git worktree add'
 alias gwtr='git worktree remove'
 alias gwtl='git worktree list'
 
+#docker
+alias dcu='docker compose up -d'
+alias dcuw='docker compose up' #w=watch (show logs)
+alias dcd='docker compose down'
+
 #general
 alias :q="exit"
 alias c="clear"
