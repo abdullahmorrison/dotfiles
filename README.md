@@ -46,7 +46,7 @@ gh was installed through the ansible playbook. Set up your git authentication by
 ```
 gh auth login
 ```
-after answering the questions given, you will recieve an auth code. Insert the given code to [github.com/login/device](https://github.com/login/device)
+after answering the questions given, you will receive an auth code. Insert the given code to [github.com/login/device](https://github.com/login/device)
 
 ### Tmux
 open tmux and run the following to set up keybinding and settings
