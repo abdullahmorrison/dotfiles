@@ -21,6 +21,7 @@
           - tmux
           - stow
           - gh
+          - eza
           - neovim
         state: latest
         update_cache: yes

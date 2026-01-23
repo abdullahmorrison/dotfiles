@@ -20,7 +20,7 @@ alias dcd='docker compose down'
 alias :q="exit"
 alias c="clear"
 alias projects='nvim $(find $HOME/code -maxdepth 1 -type d | fzf)' #open projects folder
-alias ls='exa -al --color=always --group-directories-first'
+alias ls='eza -al --color=always --group-directories-first'
 alias grep='grep --color=auto'
 alias dot='cd $HOME/code/dotfiles/' #open dotfiles folder
 alias nvimconfig='cd $HOME/code/dotfiles/.config/nvim/ && nvim' #open nvim config folder
