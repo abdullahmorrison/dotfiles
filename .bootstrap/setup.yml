@@ -21,17 +21,6 @@
           - tmux
           - stow
           - gh
-          - exa
+          - neovim
         state: latest
         update_cache: yes
-
-    - name: Download the latest Neovim tarball
-      get_url:
-        url: https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
-        dest: /tmp/nvim-linux64.tar.gz
-
-    - name: Extract the Neovim tarball
-      ansible.builtin.unarchive:
-        src: /tmp/nvim-linux64.tar.gz
-        dest: /opt/
-        remote_src: yes
