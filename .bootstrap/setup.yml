@@ -6,11 +6,11 @@
   gather_facts: true
 
   tasks:
-    - name: Get my user
+    - name: Get my User
       ansible.builtin.set_fact:
         remote_regular_user: "{{ ansible_env.SUDO_USER or ansible_user_id }}"
 
-    - name: Install other packages
+    - name: Install Other Packages
       ansible.builtin.apt:
         name:
           - nodejs
