@@ -10,7 +10,7 @@
       ansible.builtin.set_fact:
         remote_regular_user: "{{ ansible_env.SUDO_USER or ansible_user_id }}"
 
-    - name: Install Other Packages
+    - name: Install Packages
       ansible.builtin.apt:
         name:
           - nodejs
@@ -19,7 +19,7 @@
           - gcc
           - ripgrep
           - zsh
-          - zsh-autocomplete
+          - zsh-autosuggestions
           - zsh-syntax-highlighting
           - fzf
           - tmux
