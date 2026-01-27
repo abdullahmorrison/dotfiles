@@ -20,7 +20,6 @@ alias dcd='docker compose down'
 alias :q="exit"
 alias c="clear"
 alias projects='nvim $(find $HOME/code -maxdepth 1 -type d | fzf)' #open projects folder
-alias ls='eza -al --color=always --group-directories-first'
 alias grep='grep --color=auto'
 alias dot='cd $HOME/code/dotfiles/' #open dotfiles folder
 alias nvimconfig='cd $HOME/code/dotfiles/.config/nvim/ && nvim' #open nvim config folder
@@ -43,6 +42,14 @@ alias mv='mv -i' #move file
 alias cp='cp -i' #copy file
 alias rm='rm -i' #delete file
 alias ln='ln -i' #symlink file
+
+#replace ls with eza. number given after ls is tree depth
+unalias ls 2>/dev/null
+ls() {
+  local lvl="${1:-1}"
+  if [ $# -gt 0 ]; then shift; fi
+  eza -a --tree --icons --git-ignore --group-directories-first --level="$lvl" "$@"
+}
 
 #get tmux cheatsheet
 alias tmuxch='check_and_clone_repo https://github.com/abdullahmorrison/tmux-cheatsheet'
