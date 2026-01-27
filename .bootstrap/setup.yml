@@ -26,7 +26,6 @@
           - stow
           - gh
           - eza
-          - starship
           - neovim
         state: latest
         update_cache: yes
