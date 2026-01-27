@@ -19,6 +19,8 @@
           - gcc
           - ripgrep
           - zsh
+          - zsh-autocomplete
+          - zsh-syntax-highlighting
           - fzf
           - tmux
           - stow
