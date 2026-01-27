@@ -1,38 +1,35 @@
 # .dotfiles
-How I set up my system from scratch.
+How I set up my WSL system from scratch.
 
-[GNU Stow](https://www.youtube.com/watch?v=y6XCebnB9gs) is used to symlink files to the `$HOME` directory.
-
-## Requirements
-Ensure you have the following installed on your system
-
-### Git
+## Get Started
+Start with updating the distro
 ```
-sudo apt install git
+sudo apt update
 ```
-
-### Ansible
+Install git to be able to clone this repo.
 ```
-sudo apt-get update
-sudo apt-get install -y ansible
-
+sudo apt install git -y
 ```
-## Installation
-Naviagte to your root directory and clone the repo
+Install ansible. This is the tool that will automate the rest of the installations
 ```
-cd $HOME
-git clone https://github.com/abdullahmorrison/dotfiles.git
+sudo apt install -y ansible
+```
+Clone the repo and its submodules (neovim repo) within the code directory of the root folder (my preferred place to store git repos). It will be made if it doesn't already exist
+```
+mkdir -p $HOME/code && cd $HOME/code
+git clone --recurse-submodules -j8 https://github.com/abdullahmorrison/dotfiles.git 
 cd dotfiles
 ```
+Note: -j8 is an optional performance optimization that became available in version 2.8, and fetches up to 8 submodules at a time in parallel
+overwrite: n 
 
-Run Ansible playbook to install all required libraries
+Run the ansible playbook to install all required libraries in sudo and, when prompted, give your sudo password.
 ```
 ansible-playbook .bootstrap/setup.yml --ask-become-pass
 ```
-
-then use GNU stow to create the symlinks
+then use [GNU Stow](https://www.youtube.com/watch?v=y6XCebnB9gs) to create the symlinks to the `$HOME` directory (putting linked copies of the dotfiles where they belong)
 ```
-stow .
+stow -t $HOME .
 ```
 
 To set up your .zshrc config & aliases run the following cmd
@@ -42,6 +39,11 @@ source $HOME/.zshrc
 
 ## Set up
 ### Git
+set up git config
+```
+git config --global user.email abdullahmorrison@gmail.com
+git config --global user.name "Abdullah Morrison"
+```
 gh was installed through the ansible playbook. Set up your git authentication by running the following command.
 ```
 gh auth login
@@ -49,26 +51,24 @@ gh auth login
 after answering the questions given, you will receive an auth code. Insert the given code to [github.com/login/device](https://github.com/login/device)
 
 ### Tmux
-open tmux and run the following to set up keybinding and settings
+open tmux and run the following to set up keybinding and settings and open tmux
 ```
 tmux source ~/.config/tmux/tmux.conf
+tmux
 ```
-then navigate to the tmux.conf file and run `<prefix>-I` to install tmux themes and dependencies
+Within tmux, run `<prefix>-I` to install tmux themes and dependencies
+You will also need to source .zshrc within tmux
 ```
-cd  ~/.config/tmux/tmux.conf
-```
-### Nvim
-go to https://github.com/abdullahmorrison/nvim to view setup
-
-Install submodules with the following commands
-```
-git submodule init
-git submodule update
+source $HOME/.zshrc
 ```
 
-## Trouble Shoot
+## Troubleshoot
 run the following command if you already have some file in your $HOME dir that is in your .dotfiles. 
 ```
 stow --adopt .
 ```
 This moves any conflicting files to the .dotfiles directory
+Prompt flow: Concise 1
+Enable transient prompt: yes y
+Instant Prompt mode: verbose 1
+
