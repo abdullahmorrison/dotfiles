@@ -31,6 +31,11 @@ then use [GNU Stow](https://www.youtube.com/watch?v=y6XCebnB9gs) to create the s
 ```
 stow -t $HOME .
 ```
+Change your default shell from bash to zsh. Then restart your terminal
+```
+chsh -s /bin/zsh
+exit
+```
 
 To set up your .zshrc config & aliases run the following cmd
 ```
@@ -57,10 +62,6 @@ tmux source ~/.config/tmux/tmux.conf
 tmux
 ```
 Within tmux, run `<prefix>-I` to install tmux themes and dependencies
-You will also need to source .zshrc within tmux
-```
-source $HOME/.zshrc
-```
 
 ## Troubleshoot
 run the following command if you already have some file in your $HOME dir that is in your .dotfiles. 
