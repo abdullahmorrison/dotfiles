@@ -26,6 +26,6 @@
           - stow
           - gh
           - eza
-          - neovim
+          - unzip
         state: latest
         update_cache: yes
