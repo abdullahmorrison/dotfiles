@@ -31,15 +31,20 @@ then use [GNU Stow](https://www.youtube.com/watch?v=y6XCebnB9gs) to create the s
 ```
 stow -t $HOME .
 ```
+install neovim
+```
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
+sudo rm -rf /opt/nvim-linux-x86_64
+sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
+```
+install starship
+```
+curl -sS https://starship.rs/install.sh | sh
+```
 Change your default shell from bash to zsh. Then restart your terminal
 ```
 chsh -s /bin/zsh
 exit
-```
-
-To set up your .zshrc config & aliases run the following cmd
-```
-source $HOME/.zshrc
 ```
 
 ## Set up
