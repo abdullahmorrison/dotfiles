@@ -67,6 +67,16 @@ tmux source ~/.config/tmux/tmux.conf
 tmux
 ```
 Within tmux, run `<prefix>-I` to install tmux themes and dependencies
+## Install Nerd Fonts to WSL
+1. [Download the nerd font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.zip) (this download link is for JetBrainsMono)
+2. Extract the downloaded zip in your downloads folder
+3. Go to Settings > Personalization > Fonts
+4. Click Browse and install fonts. It will open an explorer, go to the downloads folder and select all the files within the extracted font folder and click accept
+5. Open your terminal
+6. Open the terminal settings (`ctrl ,`)
+7. Navigate to your WSL Profile (Ubuntu)
+8. Under font face, select the font you downloaded
+9. Click Save
 
 ## Troubleshoot
 run the following command if you already have some file in your $HOME dir that is in your .dotfiles. 
