@@ -4,6 +4,7 @@
 alias gs='git status -s'
 alias ga='git add -p'
 alias gc='git commit -m'
+alias gcchange='git commit --amend -m'
 alias gpush='git push'
 alias gpull='git pull --rebase'
 alias gunstage='git reset'
