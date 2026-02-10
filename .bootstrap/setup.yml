@@ -26,6 +26,7 @@
           - stow
           - gh
           - eza
+          - jq
           - unzip
         state: latest
         update_cache: yes
