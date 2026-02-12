@@ -31,6 +31,10 @@ then use [GNU Stow](https://www.youtube.com/watch?v=y6XCebnB9gs) to create the s
 ```
 stow -t $HOME .
 ```
+install nvm
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
+```
 install neovim
 ```
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
