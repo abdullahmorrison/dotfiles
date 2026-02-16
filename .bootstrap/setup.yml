@@ -28,5 +28,6 @@
           - eza
           - jq
           - unzip
+          - git-crypt
         state: latest
         update_cache: yes
