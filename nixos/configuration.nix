@@ -119,6 +119,7 @@
       networkmanagerapplet
       wofi
       ghostty
+      waybar
   ];
 
   programs.hyprland = {
