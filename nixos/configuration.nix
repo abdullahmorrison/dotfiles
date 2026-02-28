@@ -116,6 +116,9 @@
       _1password-gui
       ente-auth
       firefox
+      networkmanagerapplet
+      wofi
+      ghostty
   ];
 
   programs.hyprland = {
