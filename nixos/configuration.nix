@@ -10,12 +10,14 @@
       ./hardware-configuration.nix
     ];
 
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services.hyprland.enableGnomeKeyring = true;
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -56,9 +58,6 @@
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
 
-  # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -93,7 +92,6 @@
     description = "Abdullah Morrison";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      kdePackages.kate
     #  thunderbird
     ];
   };
