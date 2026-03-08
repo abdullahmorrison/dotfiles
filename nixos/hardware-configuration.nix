@@ -30,7 +30,6 @@
   hardware = {
     cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
     graphics.enable = true;
-    nvidia.modesetting.enable = true;
   };
 }
 
